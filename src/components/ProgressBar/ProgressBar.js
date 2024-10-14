@@ -41,7 +41,9 @@ const ProgressBar = ({ value, size }) => {
             "--valuenow": `${value}%`,
             ...SIZES[size],
           }}
-        ></Bar>
+        >
+          <VisuallyHidden>{value}%</VisuallyHidden>
+        </Bar>
       </BarTrimmer>
     </Wrapper>
   );
@@ -49,22 +51,22 @@ const ProgressBar = ({ value, size }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   height: var(--height);
   max-width: 370px;
   padding: var(--padding);
   border-radius: var(--wrapper-border-radius);
+  background-color: ${COLORS.transparentGray15};
+  box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
 `;
 
 const BarTrimmer = styled.div`
   border-radius: var(--wrapper-border-radius);
+  /* Trim off corners when progress bar is near full */
   overflow: clip;
   height: 100%;
-  width: 100%;
 `;
 
 const Bar = styled.div`
-  top: 4px;
   background-color: ${COLORS.primary};
   height: 100%;
   width: var(--valuenow);
