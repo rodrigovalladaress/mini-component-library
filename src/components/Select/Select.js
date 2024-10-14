@@ -33,6 +33,7 @@ const NativeSelect = styled.select`
   opacity: 0;
   position: absolute;
   inset: 0;
+  appearance: none;
 `;
 
 const Wrapper = styled.div`
