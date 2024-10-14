@@ -47,15 +47,11 @@ const Input = styled.input`
   font-weight: 700;
   padding: var(--padding);
   width: 100%;
-  color: ${COLORS.gray700};
+  color: inherit;
 
   &::placeholder {
-    font-weight: 500;
+    font-weight: 400;
     color: ${COLORS.gray500};
-  }
-
-  &:hover {
-    color: black;
   }
 
   &:focus {
@@ -72,16 +68,17 @@ const IconWrapper = styled.div`
   height: var(--icon-size);
   margin-block: auto;
   pointer-events: none;
-  color: ${COLORS.gray700};
-
-  ${Input}:hover + & {
-    color: black;
-  }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
+  display: block;
   position: relative;
   width: var(--width);
+  color: ${COLORS.gray700};
+
+  &:hover {
+    color: ${COLORS.black};
+  }
 `;
 
 export default IconInput;
